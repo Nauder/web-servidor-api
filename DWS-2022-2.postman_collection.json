@@ -1,0 +1,909 @@
+{
+	"info": {
+		"_postman_id": "5f00e8af-6ba1-4df6-8eed-d8111028e01c",
+		"name": "DWS-2022-2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create_usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/auth/registrar?nome=teste&email=user@mail.com&senha=123&data_nascimento=13/11/2002&telefone=42998317285&cpf=11111111111",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"auth",
+						"registrar"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "teste"
+						},
+						{
+							"key": "email",
+							"value": "user@mail.com"
+						},
+						{
+							"key": "senha",
+							"value": "123"
+						},
+						{
+							"key": "data_nascimento",
+							"value": "13/11/2002"
+						},
+						{
+							"key": "telefone",
+							"value": "42998317285"
+						},
+						{
+							"key": "cpf",
+							"value": "11111111111"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_usuario_adm",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/auth/registrar-adm?nome=super_adm&email=admin@mail.com&senha=123&data_nascimento=13/11/2002&telefone=42998317285&cpf=22222222222",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"auth",
+						"registrar-adm"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "super_adm"
+						},
+						{
+							"key": "email",
+							"value": "admin@mail.com"
+						},
+						{
+							"key": "senha",
+							"value": "123"
+						},
+						{
+							"key": "data_nascimento",
+							"value": "13/11/2002"
+						},
+						{
+							"key": "telefone",
+							"value": "42998317285"
+						},
+						{
+							"key": "cpf",
+							"value": "22222222222"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login_usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/auth/login?email=user@mail.com&senha=123",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "user@mail.com"
+						},
+						{
+							"key": "senha",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "emprestar_veiculo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/emprestimo/emprestar?data_emprestimo=13/11/2003&data_entrega=13/11/2004&id_veiculo=1&id_empresa_entrega=1&id_empresa_emprestimo=1",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"emprestimo",
+						"emprestar"
+					],
+					"query": [
+						{
+							"key": "data_emprestimo",
+							"value": "13/11/2003"
+						},
+						{
+							"key": "data_entrega",
+							"value": "13/11/2004"
+						},
+						{
+							"key": "id_veiculo",
+							"value": "1"
+						},
+						{
+							"key": "id_empresa_entrega",
+							"value": "1"
+						},
+						{
+							"key": "id_empresa_emprestimo",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "visualizar_logado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/usuario/ver-usuario",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"usuario",
+						"ver-usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "visualizar_emprestimos_logado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/usuario/emprestimos",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"usuario",
+						"emprestimos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/usuario/listar",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"usuario",
+						"listar"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5||6",
+							"disabled": true
+						},
+						{
+							"key": "nome",
+							"value": "teste||Nome||admin",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_empresa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/empresa/listar?id=1",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"empresa",
+						"listar"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_veiculo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/veiculo/listar",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"veiculo",
+						"listar"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "nome",
+							"value": "admin",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_emprestimo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/emprestimo/listar",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"emprestimo",
+						"listar"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "nome",
+							"value": "admin",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/usuario/criar?senha=123&data_nascimento=13/11/1989&telefone=42998327285&cpf=33333333333",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"usuario",
+						"criar"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Teste",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "test@mail.com",
+							"disabled": true
+						},
+						{
+							"key": "senha",
+							"value": "123"
+						},
+						{
+							"key": "data_nascimento",
+							"value": "13/11/1989"
+						},
+						{
+							"key": "telefone",
+							"value": "42998327285"
+						},
+						{
+							"key": "cpf",
+							"value": "33333333333"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_empresa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/empresa/criar?cnpj=50568581000130&razao_social=Hyundai&endereco=Rua do Nada, Nenhures - 123&uf=PR",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"empresa",
+						"criar"
+					],
+					"query": [
+						{
+							"key": "cnpj",
+							"value": "50568581000130"
+						},
+						{
+							"key": "razao_social",
+							"value": "Hyundai"
+						},
+						{
+							"key": "endereco",
+							"value": "Rua do Nada, Nenhures - 123"
+						},
+						{
+							"key": "uf",
+							"value": "PR"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_veiculo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/veiculo/criar?placa=ANQ2022&modelo=Gol&marca=Copa&cor=Amarelo&ano=2010&quilometragem=200&custo_dia=1550&id_empresa=1",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"veiculo",
+						"criar"
+					],
+					"query": [
+						{
+							"key": "placa",
+							"value": "ANQ2022"
+						},
+						{
+							"key": "modelo",
+							"value": "Gol"
+						},
+						{
+							"key": "marca",
+							"value": "Copa"
+						},
+						{
+							"key": "cor",
+							"value": "Amarelo"
+						},
+						{
+							"key": "ano",
+							"value": "2010"
+						},
+						{
+							"key": "quilometragem",
+							"value": "200"
+						},
+						{
+							"key": "custo_dia",
+							"value": "1550"
+						},
+						{
+							"key": "id_empresa",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_emprestimo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "imagem",
+							"type": "file",
+							"src": "/C:/Users/prest/Downloads/7vn3MB3th3FkVQjHmgge--4--jrk39.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL_API}}/emprestimo/criar?data_emprestimo=13/11/2002&data_entrega=13/11/2020&id_veiculo=1&id_usuario=6&id_empresa_entrega=1&id_empresa_emprestimo=1",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"emprestimo",
+						"criar"
+					],
+					"query": [
+						{
+							"key": "data_emprestimo",
+							"value": "13/11/2002"
+						},
+						{
+							"key": "data_entrega",
+							"value": "13/11/2020"
+						},
+						{
+							"key": "id_veiculo",
+							"value": "1"
+						},
+						{
+							"key": "id_usuario",
+							"value": "6"
+						},
+						{
+							"key": "id_empresa_entrega",
+							"value": "1"
+						},
+						{
+							"key": "id_empresa_emprestimo",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/usuario/editar?id=5&nome=Nome&email=Maill@mail.com",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"usuario",
+						"editar"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						},
+						{
+							"key": "nome",
+							"value": "Nome"
+						},
+						{
+							"key": "email",
+							"value": "Maill@mail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_empresa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/empresa/editar?id=1&uf=RJ",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"empresa",
+						"editar"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "uf",
+							"value": "RJ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_veiculo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/veiculo/editar?id=1&cor=vermelho",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"veiculo",
+						"editar"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "cor",
+							"value": "vermelho"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_emprestimo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/emprestimo/editar?id=1&cor=vermelho",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"emprestimo",
+						"editar"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "cor",
+							"value": "vermelho"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/usuario/remover",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"usuario",
+						"remover"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_empresa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/empresa/remover",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"empresa",
+						"remover"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_veiculo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/veiculo/remover",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"veiculo",
+						"remover"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_emprestimo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|A7MCxZ7ys28i4K5keQt4sOFuv89eVfVbGJ1avUMl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_API}}/emprestimo/remover",
+					"host": [
+						"{{BASE_URL_API}}"
+					],
+					"path": [
+						"emprestimo",
+						"remover"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
